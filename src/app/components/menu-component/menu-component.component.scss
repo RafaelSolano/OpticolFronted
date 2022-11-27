@@ -1,0 +1,40 @@
+$color : #8B80F8;
+@mixin sombra {
+
+
+}
+
+.navbar-brand{
+  color:#8B80F8 ;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 900;
+  font-size: 48px;
+  line-height: 34px;
+
+  @include sombra()
+}
+.nav-item{
+  transition: 300ms;
+  :hover{
+    //text-decoration: underline;
+    color: #8B80F8;
+    text-shadow: 0px 1px 0px #8B80F8;
+
+  }
+}
+.nav-link{
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 400;
+font-size: 24.1013px;
+line-height: 28px;
+
+color: #4C5A81;
+
+
+
+}
+
+
+
