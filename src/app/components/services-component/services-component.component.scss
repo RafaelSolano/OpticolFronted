@@ -1,0 +1,56 @@
+.section{
+    height: auto;
+    background: linear-gradient(180deg, rgba(127, 228, 240, 0) 0%, #7FE4F0 100%);
+    padding-top: 100pt;
+    
+}
+
+// .back-image{
+//     background-image: url(/assets/img/fondo.png);
+//     mix-blend-mode: color-burn;
+//     backdrop-filter: blur(7.5px);
+// }
+
+.titulo{
+
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    /* identical to box height, or 150% */
+
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.15px;
+
+    /* c.secundario-hover */
+
+    color: #1E87FD;
+
+}
+.parrafo{
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    /* or 133% */
+
+    text-align: center;
+    letter-spacing: 0.5px;
+
+    /* c.texto-secundario */
+
+    color: #4C5A81;
+}
+
+h1{
+    font-weight: 800;
+    font-size: 32px;
+    line-height: 40px;
+    /* identical to box height, or 125% */
+
+
+    align-items: center;
+
+    /* c.texto-secundario */
+
+    color: #4C5A81;
+}
