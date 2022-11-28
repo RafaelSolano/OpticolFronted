@@ -6,11 +6,14 @@ import { AppComponent } from './app.component';
 import { MenuComponentComponent } from './components/menu-component/menu-component.component';
 import { BloqueHeroComponentComponent } from './components/bloque-hero-component/bloque-hero-component.component';
 
+import { FooterComponentComponent } from './components/footer-component/footer-component.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponentComponent,
-    BloqueHeroComponentComponent
+    BloqueHeroComponentComponent,
+    FooterComponentComponent
   ],
   imports: [
     BrowserModule,
