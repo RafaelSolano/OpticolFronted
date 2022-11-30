@@ -1,0 +1,30 @@
+
+<h1>Pacientes</h1>
+<button class="btn btn-outline-primary"><i class="fa-solid fa-user-plus"></i> Crear Paciente</button>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Telefono</th>
+      <th scope="col">correo</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr  *ngFor="let paciente of pacientes ">
+      <th scope="row">1</th>
+      <td>{{paciente.nombre}}</td>
+      <td>{{paciente.telefono}}</td>
+      <td>{{paciente.correo}}</td>
+      <td class="d-flex gap-1 justify-content-end" >
+        <button class="btn btn-outline-danger"><i class="fa-solid fa-trash"></i></button>
+        <button class=" btn btn-outline-success"><i class="fa-regular fa-pen-to-square"></i> </button>
+      </td>
+    </tr>
+
+
+  </tbody>
+</table>
+
+

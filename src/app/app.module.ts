@@ -5,9 +5,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MenuComponentComponent } from './components/menu-component/menu-component.component';
 import { BloqueHeroComponentComponent } from './components/bloque-hero-component/bloque-hero-component.component';
-
 import { FooterComponentComponent } from './components/footer-component/footer-component.component';
 import { ServicesComponentComponent } from './components/services-component/services-component.component';
+import { InicioComponent } from './pages/inicio/inicio.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
+import { HttpClientModule} from '@angular/common/http';
+import { FormsModule} from '@angular/forms';
+
+
 
 @NgModule({
   declarations: [
@@ -15,11 +21,16 @@ import { ServicesComponentComponent } from './components/services-component/serv
     MenuComponentComponent,
     BloqueHeroComponentComponent,
     FooterComponentComponent,
-    ServicesComponentComponent
+    ServicesComponentComponent,
+    InicioComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgbModule,
+    HttpClientModule,
+    FormsModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
