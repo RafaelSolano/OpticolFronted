@@ -16,4 +16,8 @@ export class PacienteService {
   public list(): Observable<Paciente[]>{
     return this.httpClient.get<Paciente[]>(this.pacientesURL);
   }
+
+  public eliminar(id: string): Observable<any>{
+    return this.httpClient.delete<Paciente>(this.pacientesURL+`/${id}`);
+  }
 }
