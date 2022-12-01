@@ -1,12 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,   } from '@angular/core';
 import Swal from 'sweetalert2';
 import { Paciente } from '../../models/paciente';
 import { PacienteService } from '../../services/paciente.service';
+import { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-pacientes',
   templateUrl: './pacientes.component.html',
-  styleUrls: ['./pacientes.component.scss']
+  styleUrls: ['./pacientes.component.scss'],
+
 })
 export class PacientesComponent implements OnInit {
   pacientes: Paciente[]=[];

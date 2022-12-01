@@ -8,6 +8,7 @@ import { LayoutComponent } from './components/layout/layout.component';
 
 import { HttpClientModule} from '@angular/common/http';
 import { FormsModule} from '@angular/forms';
+import { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 
@@ -24,7 +25,8 @@ import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
     AdminRoutingModule,
     SweetAlert2Module.forRoot(),
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    NgbTooltipModule
 
   ]
 })
