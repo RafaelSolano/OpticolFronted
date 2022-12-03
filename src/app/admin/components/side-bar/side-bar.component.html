@@ -1,0 +1,21 @@
+<div id="main">
+  <button class="openbtn" (click)="toggleSideBar()">☰</button>
+</div>
+
+<div id="mySidebar" class="sidebar" [ngClass]="this.showMenu ? 'showMenu' : ''">
+  <div id="main">
+    <button class="openbtn" (click)="toggleSideBar()">☰</button>
+  </div>
+  <a href="javascript:void(0)" class="closebtn" (click)="toggleSideBar()">×</a>
+  <a href="#">Home</a>
+  <a class="active" href="#">Catalogo</a>
+  <a href="#">About</a>
+</div>
+
+
+
+<li><a routerLink="pacientes">Pacientes</a></li>
+      <li><a routerLink="citas">Citas</a></li>
+      <li><a routerLink="formPaciente">Agregar Pacientes</a></li>
+      <li><a routerLink="inicio">salir</a></li>
+

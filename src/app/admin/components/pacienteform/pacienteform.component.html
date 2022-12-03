@@ -1,0 +1,39 @@
+<form
+
+  [formGroup]="formulario"
+  (ngSubmit)="guardar()"
+  >
+  <div>
+    <label for="nombre">Nombre:</label>
+    <input
+    type="text"
+    name="nombre"
+    placeholder=" Pedro Perez"
+    formControlName = "nombre"
+    >
+  </div>
+
+  <div>
+  <label for="telefono">Telefono:</label>
+  <input
+    type="tel"
+    name="telefono"
+    placeholder=" 32075643"
+    formControlName = "telefono"
+  >
+
+  <div>
+  </div>
+  <label for="correo">Correo:</label>
+  <input
+  type="email"
+  name="correo"
+  placeholder="example@.correo.com"
+  formControlName = "correo"
+  >
+  </div>
+
+
+
+  <button type="submit"  class=" btn btn-outline-success">Agregar Paciente</button>
+</form>

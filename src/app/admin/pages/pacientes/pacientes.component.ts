@@ -2,7 +2,6 @@ import { Component, OnInit,   } from '@angular/core';
 import Swal from 'sweetalert2';
 import { Paciente } from '../../models/paciente';
 import { PacienteService } from '../../services/paciente.service';
-import { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-pacientes',
@@ -14,7 +13,9 @@ export class PacientesComponent implements OnInit {
   pacientes: Paciente[]=[];
 
   constructor(
-    private pacienteService: PacienteService) { }
+    private pacienteService: PacienteService)
+
+    { }
 
   ngOnInit(): void {
     this.getPacientes();

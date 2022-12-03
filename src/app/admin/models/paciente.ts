@@ -1,15 +1,11 @@
-export class Paciente {
+export interface Paciente {
 
-  id!: string;
+  id: string;
   nombre:string;
   telefono: string;
   correo: string;
 
-  constructor(nombre:string, telefono: string, correo: string ){
-    this.nombre = nombre;
-    this.telefono = telefono;
-    this.correo = correo;
-  }
+
 
 
 }
