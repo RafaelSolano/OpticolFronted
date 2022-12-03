@@ -1,7 +1,64 @@
 
 <h1>Pacientes</h1>
 
-<app-pacienteform></app-pacienteform>
+<!--!<app-pacienteform></app-pacienteform>
+-->
+<div class="formul">
+  <form
+  class="form"
+  [formGroup]="formulario"
+  (ngSubmit)="guardar();"
+
+
+  >
+  <div class="container d-flex flex-row">
+
+    
+
+  <div>
+    <label for="nombre">Nombre:</label>
+    <input
+    type="text"
+    name="nombre"
+    formControlName = "nombre"
+    >
+  </div>
+
+  <div>
+  <label for="telefono">Telefono:</label>
+  <input
+    type="tel"
+    name="telefono"
+
+    formControlName = "telefono"
+  >
+
+  </div>
+  <div>
+  <label for="correo">Correo:</label>
+  <input
+  type="email"
+  name="correo"
+  placeholder="example@.correo.com"
+  formControlName = "correo"
+  >
+  </div>
+</div>
+
+<div >
+  <button
+    type="submit"
+    class="  btn btn-outline-success m-1"
+    ><i class="fa-solid fa-user-plus"></i> Guardar</button>
+</div>
+
+</form>
+</div>
+
+
+
+
+
 <table class="table table-hover">
   <thead>
     <tr>
@@ -28,9 +85,13 @@
           (click)="eliminar(paciente.id)">
           <i class="fa-solid fa-trash"></i>
         </button>
-        <button class=" btn btn-outline-success "
+        <button
+          class=" btn btn-outline-success "
           ngbTooltip="Modificar"
-          tooltipClass="my-custom-class">
+          tooltipClass="my-custom-class"
+          (click)="modificarPaciente(paciente.id)"
+          >
+
           <i class="fa-regular fa-pen-to-square"></i>
         </button>
       </td>

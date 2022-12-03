@@ -13,7 +13,6 @@ import { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
-import { PacienteformComponent } from './components/pacienteform/pacienteform.component';
 import { SideBarComponent } from './components/side-bar/side-bar.component';
 
 @NgModule({
@@ -21,7 +20,6 @@ import { SideBarComponent } from './components/side-bar/side-bar.component';
     PacientesComponent,
     CitasComponent,
     LayoutComponent,
-    PacienteformComponent,
     SideBarComponent
   ],
   imports: [

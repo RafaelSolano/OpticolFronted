@@ -1,4 +1,6 @@
 import { Component, OnInit,   } from '@angular/core';
+import { FormControl, Validators, FormGroup, FormBuilder, NonNullableFormBuilder } from '@angular/forms';
+import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
 import { Paciente } from '../../models/paciente';
 import { PacienteService } from '../../services/paciente.service';
@@ -10,12 +12,19 @@ import { PacienteService } from '../../services/paciente.service';
 
 })
 export class PacientesComponent implements OnInit {
+  formulario!: FormGroup ;
   pacientes: Paciente[]=[];
 
   constructor(
-    private pacienteService: PacienteService)
+    private formBuilder: FormBuilder,
+    private pacienteService: PacienteService,
+    private router :Router,
+    )
 
-    { }
+    {
+      this.buildForm();
+
+    }
 
   ngOnInit(): void {
     this.getPacientes();
@@ -62,6 +71,63 @@ export class PacientesComponent implements OnInit {
       }
     })
 
+  }
+  //Modificar Paciente
+  modificarPaciente(id:string):void{
+    this.pacienteService.detail(id).subscribe(data =>{
+
+    this.formulario = this.formBuilder.group({
+
+      nombre: [data.nombre],
+      telefono: [data.telefono],
+      correo: [data.correo],
+    });
+    this.pacienteService.modificar(id,data);
+    })
+  }
+
+  guardar():void{
+    this.crearPaciente();
+
+
+  }
+
+  //Crear paciente
+  private crearPaciente(){
+    const data = this.formulario.value ;
+    this.pacienteService.save(data)
+    .subscribe(
+      data=>{
+        Swal.fire({
+          position: 'top-end',
+          icon: 'success',
+          title: 'Se Agrago con exito',
+          showConfirmButton: false,
+          timer: 1300
+        });
+        this.getPacientes();
+        this.formulario.reset();
+      console.log(data);
+    });
+  }
+
+
+
+
+  private buildForm(){
+    this.formulario = this.formBuilder.group({
+      nombre: [''],
+      telefono: [''],
+      correo: [''],
+    });
+
+  }
+
+
+  getPacienteporid(id: string){
+   this.pacienteService.detail(id).subscribe(data=>{
+  console.log(data);
+   });
   }
 
 
