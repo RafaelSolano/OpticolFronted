@@ -1,8 +1,11 @@
+
 <form
+  class="form"
 
   [formGroup]="formulario"
   (ngSubmit)="guardar()"
   >
+  <div class="container d-flex flex-row">
   <div>
     <label for="nombre">Nombre:</label>
     <input
@@ -22,8 +25,8 @@
     formControlName = "telefono"
   >
 
-  <div>
   </div>
+  <div>
   <label for="correo">Correo:</label>
   <input
   type="email"
@@ -32,8 +35,13 @@
   formControlName = "correo"
   >
   </div>
+</div>
 
-
-
-  <button type="submit"  class=" btn btn-outline-success">Agregar Paciente</button>
+<div >
+  <button
+    type="submit"
+    class="  btn btn-outline-success m-1"
+    ><i class="fa-solid fa-user-plus"></i> Crear Paciente</button>
+</div>
 </form>
+

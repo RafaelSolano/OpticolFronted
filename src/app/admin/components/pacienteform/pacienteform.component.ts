@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators, FormGroup, FormBuilder } from '@angular/forms';
+import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { PacienteService } from '../../services/paciente.service';
 @Component({
   selector: 'app-pacienteform',
@@ -7,13 +8,13 @@ import { PacienteService } from '../../services/paciente.service';
   styleUrls: ['./pacienteform.component.scss']
 })
 export class PacienteformComponent  implements OnInit{
-
   formulario!: FormGroup ;
 
 
   constructor(
     private formBuilder: FormBuilder,
-    private pacienteService: PacienteService
+    private pacienteService: PacienteService,
+    
   ){
     this.buildForm();
 
@@ -22,17 +23,19 @@ export class PacienteformComponent  implements OnInit{
     }
 
   guardar():void{
-    this.crearPaciente();
+    this.crearPaciente()
+
   }
 
   private crearPaciente(){
     const data = this.formulario.value ;
     this.pacienteService.save(data)
     .subscribe(data=>{
+
       console.log(data);
 
-    }
-    );
+    });
+
 
   }
   private buildForm(){
@@ -45,7 +48,11 @@ export class PacienteformComponent  implements OnInit{
   }
 
 
+
 }
+
+
+
 
 
 
