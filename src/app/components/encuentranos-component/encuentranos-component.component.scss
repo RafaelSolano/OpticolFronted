@@ -1,15 +1,13 @@
 .section{
     height: auto;
     background: linear-gradient(180deg, rgba(127, 228, 240, 0) 0%, #7FE4F0 100%);
-    padding-top: 100pt;
+    padding-top: 10pt;
+    padding-bottom: 0;
+    margin-bottom: 0;
+    padding-left: 40pt;
+    padding-right: 40pt;
     
 }
-
-// .back-image{
-//     background-image: url(/assets/img/fondo.png);
-//     mix-blend-mode: color-burn;
-//     backdrop-filter: blur(7.5px);
-// }
 
 .titulo{
 
@@ -27,20 +25,18 @@
     color: #1E87FD;
 
 }
-.parrafo{
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 16px;
-    /* or 133% */
 
-    text-align: center;
-    letter-spacing: 0.5px;
-
-    /* c.texto-secundario */
-
-    color: #4C5A81;
+.navbar-brand{
+    color:#8B80F8 ;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 48px;
+    
 }
-
+.card{
+    padding-top: 10pt ;
+}
 h1{
     font-weight: 800;
     font-size: 32px;
@@ -54,9 +50,20 @@ h1{
 
     color: #4C5A81;
 }
-.card-img-top{
-    height: 200pt;
+.mapouter {
+    position: relative;
+    text-align: right;
+
 }
-.col-container {
-    display: flex;
+
+.gmap_canvas {
+    overflow: hidden;
+    background: none !important;
+    width: fit-content;
+    height: 400px;
+}
+
+.gmap_iframe {
+    width: 900px !important;
+    height: 400px !important;
 }
