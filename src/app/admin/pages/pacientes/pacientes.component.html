@@ -1,63 +1,36 @@
-
 <h1>Pacientes</h1>
 
-<!--!<app-pacienteform></app-pacienteform>
--->
+
+<!--Formulario agregar Pacientes-->
 <div class="formul">
-  <form
-  class="form"
-  [formGroup]="formulario"
-  (ngSubmit)="guardar();"
+  <form class="form" [formGroup]="formulario">
+    <div class="container d-flex flex-row px-0 ">
 
+      <div class="form-floating mb-3 px-0">
+        <input formControlName="nombre" type="text" class="form-control" id="floatingInput" placeholder="name@example.com">
+        <label for="floatingInput">Nombre</label>
+      </div>
 
-  >
-  <div class="container d-flex flex-row">
+      <div class="form-floating mb-3 px-2">
+        <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com" formControlName="telefono">
+        <label for="floatingInput">Telefono</label>
+      </div>
 
-    
+      <div class="form-floating mb-3">
+        <input formControlName="correo" type="text" class="form-control" id="floatingInput" placeholder="name@example.com">
+        <label for="floatingInput">correo</label>
+      </div>
 
-  <div>
-    <label for="nombre">Nombre:</label>
-    <input
-    type="text"
-    name="nombre"
-    formControlName = "nombre"
-    >
-  </div>
+    </div>
 
-  <div>
-  <label for="telefono">Telefono:</label>
-  <input
-    type="tel"
-    name="telefono"
+    <div>
+      <button type="submit" (click)="guardar()" class="  btn btn-outline-success m-1"><i
+          class="fa-solid fa-user-plus"></i> Guardar</button>
+    </div>
 
-    formControlName = "telefono"
-  >
-
-  </div>
-  <div>
-  <label for="correo">Correo:</label>
-  <input
-  type="email"
-  name="correo"
-  placeholder="example@.correo.com"
-  formControlName = "correo"
-  >
-  </div>
+  </form>
 </div>
-
-<div >
-  <button
-    type="submit"
-    class="  btn btn-outline-success m-1"
-    ><i class="fa-solid fa-user-plus"></i> Guardar</button>
-</div>
-
-</form>
-</div>
-
-
-
-
+<hr>
 
 <table class="table table-hover">
   <thead>
@@ -65,32 +38,26 @@
       <th scope="col">#</th>
       <th scope="col">Nombre</th>
       <th scope="col">Telefono</th>
-      <th scope="col">correo</th>
+      <th scope="col">Correo</th>
       <th scope="col"></th>
     </tr>
   </thead>
   <tbody>
-    <tr  *ngFor="let paciente of pacientes let i = index "  >
+    <tr *ngFor="let paciente of pacientes let i = index ">
       <th scope="row">{{i + 1}}</th>
       <td>{{paciente.nombre}}</td>
       <td>{{paciente.telefono}}</td>
       <td>{{paciente.correo}}</td>
-      <td class="d-flex gap-1 justify-content-center p-1" >
+      <td class="d-flex gap-1 justify-content-center p-1">
 
 
 
-        <button type="button" class="btn btn-outline-danger"
-          ngbTooltip="Eliminar"
-          tooltipClass="my-custom-class"
+        <button type="button" class="btn btn-outline-danger" ngbTooltip="Eliminar" tooltipClass="my-custom-class"
           (click)="eliminar(paciente.id)">
           <i class="fa-solid fa-trash"></i>
         </button>
-        <button
-          class=" btn btn-outline-success "
-          ngbTooltip="Modificar"
-          tooltipClass="my-custom-class"
-          (click)="modificarPaciente(paciente.id)"
-          >
+        <button class=" btn btn-outline-success " ngbTooltip="Modificar" tooltipClass="my-custom-class"
+          data-bs-toggle="modal" data-bs-target="#modificarPaciente" (click)="modificarPaciente(paciente.id)">
 
           <i class="fa-regular fa-pen-to-square"></i>
         </button>
@@ -101,3 +68,57 @@
   </tbody>
 </table>
 
+
+
+<!-- Modal -->
+<div class="modal fade" id="modificarPaciente" tabindex="-1" aria-labelledby="modificarPacienteLabel"
+  aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="modificarPacienteLabel">Modificar Pacientes</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+
+      <div class="modal-body">
+        <form [formGroup]="formulario">
+
+
+
+          <!--Imput Nombre-->
+          <div class="mb-3">
+            <label for="input-nombre" class="form-label">Nombre</label>
+            <input type="txt" class="form-control" id="input-nombre" name="nombre" formControlName="nombre">
+          </div>
+
+          <!--Imput Telefono-->
+          <div class="mb-3">
+            <label for="input-telefono" class="form-label">Telefono</label>
+            <input class="form-control" type="tel" id="input-telefono" name="telefono" formControlName="telefono">
+          </div>
+
+          <!--Imput Correo-->
+          <div class="mb-3">
+            <label for="input-correo" class="form-label">Correo</label>
+            <input type="txt" class="form-control" id="input-correo" name="correo" placeholder="example@.correo.com"
+              formControlName="correo">
+          </div>
+
+
+        </form>
+      </div>
+
+
+      <div class="modal-footer">
+        <button
+            type="submit"
+            class="btn btn-outline-success"
+            (click)="update()"
+          >Guardar cambios</button>
+        <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Cancelar</button>
+
+      </div>
+    </div>
+  </div>
+</div>

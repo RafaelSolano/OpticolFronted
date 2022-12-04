@@ -25,8 +25,8 @@ export class PacienteService {
   public save(data: Partial<Paciente>):Observable<any>{
     return this.httpClient.post<Paciente>(this.pacientesURL, data);
   }
-  public modificar( id: string, data: Partial<Paciente>):Observable<any>{
-    return this.httpClient.put<Paciente>(this.pacientesURL+`/${id}`, data);
+  public modificar( data: Partial<Paciente>):Observable<any>{
+    return this.httpClient.put<Paciente>(this.pacientesURL, data);
   }
 
   public detail(id: string): Observable<any>{
