@@ -13,6 +13,8 @@ import { PacienteService } from '../../services/paciente.service';
 })
 export class PacientesComponent implements OnInit {
   formulario!: FormGroup ;
+  modal!:FormGroup;
+
   pacientes: Paciente[]=[];
 
   constructor(
@@ -67,30 +69,43 @@ export class PacientesComponent implements OnInit {
           'le paciente fue eliminado',
           'success'
         )
-
       }
     })
+  }
 
+//crear paciente
+  guardar( ):void{
+    this.crearPaciente();
   }
   //Modificar Paciente
-  modificarPaciente(id:string):void{
-    this.pacienteService.detail(id).subscribe(data =>{
-
-    this.formulario = this.formBuilder.group({
-
-      nombre: [data.nombre],
-      telefono: [data.telefono],
-      correo: [data.correo],
-    });
-    this.pacienteService.modificar(id,data);
+  update():void{
+    const data = this.formulario.value ;
+    console.log(data);
+    //this.modificarPaciente(data.id);
+    this.pacienteService.modificar(data)
+    .subscribe(data=>{
+      Swal.fire({
+        position: 'top-end',
+        icon: 'success',
+        title: 'Se Modifico  con exito',
+        showConfirmButton: false,
+        timer: 1300
+      });
+      this.getPacientes();
     })
   }
+  modificarPaciente(id:any){
+    const pacienteData =  this.pacienteService.detail(id).subscribe(pdata =>{
+      this.pacienteService.modificar(pdata);
+      this.formulario = this.formBuilder.group({
+        id:[pdata.id],
+        nombre: [pdata.nombre],
+        telefono: [pdata.telefono],
+        correo: [pdata.correo],
+      });
+    });
+}
 
-  guardar():void{
-    this.crearPaciente();
-
-
-  }
 
   //Crear paciente
   private crearPaciente(){
@@ -111,11 +126,9 @@ export class PacientesComponent implements OnInit {
     });
   }
 
-
-
-
   private buildForm(){
     this.formulario = this.formBuilder.group({
+
       nombre: [''],
       telefono: [''],
       correo: [''],
@@ -123,11 +136,10 @@ export class PacientesComponent implements OnInit {
 
   }
 
-
   getPacienteporid(id: string){
-   this.pacienteService.detail(id).subscribe(data=>{
+  this.pacienteService.detail(id).subscribe(data=>{
   console.log(data);
-   });
+  });
   }
 
 

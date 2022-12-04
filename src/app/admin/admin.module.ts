@@ -7,7 +7,7 @@ import { CitasComponent } from './pages/citas/citas.component';
 import { LayoutComponent } from './components/layout/layout.component';
 
 import { HttpClientModule} from '@angular/common/http';
-import { ReactiveFormsModule} from '@angular/forms';
+import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
 
 
@@ -27,7 +27,7 @@ import { SideBarComponent } from './components/side-bar/side-bar.component';
     AdminRoutingModule,
     SweetAlert2Module.forRoot(),
     HttpClientModule,
-
+    FormsModule,
     NgbTooltipModule,
     ReactiveFormsModule
 
