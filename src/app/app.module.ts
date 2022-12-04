@@ -13,6 +13,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule} from '@angular/common/http';
 import { FormsModule} from '@angular/forms';
 import { EncuentranosComponentComponent } from './components/encuentranos-component/encuentranos-component.component';
+import { ReviewsComponentComponent } from './components/reviews-component/reviews-component.component';
 
 
 
@@ -24,7 +25,8 @@ import { EncuentranosComponentComponent } from './components/encuentranos-compon
     FooterComponentComponent,
     ServicesComponentComponent,
     InicioComponent,
-    EncuentranosComponentComponent
+    EncuentranosComponentComponent,
+    ReviewsComponentComponent
   ],
   imports: [
     BrowserModule,
