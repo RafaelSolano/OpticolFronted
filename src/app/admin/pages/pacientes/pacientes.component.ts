@@ -83,6 +83,7 @@ export class PacientesComponent implements OnInit {
     console.log(data);
     //this.modificarPaciente(data.id);
     this.pacienteService.modificar(data)
+
     .subscribe(data=>{
       Swal.fire({
         position: 'top-end',
@@ -92,6 +93,7 @@ export class PacientesComponent implements OnInit {
         timer: 1300
       });
       this.getPacientes();
+      this.formulario.reset();
     })
   }
   modificarPaciente(id:any){

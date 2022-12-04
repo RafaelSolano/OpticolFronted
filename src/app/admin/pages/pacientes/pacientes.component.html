@@ -1,27 +1,26 @@
 <h1>Pacientes</h1>
 
 
-
+<!--Formulario agregar Pacientes-->
 <div class="formul">
   <form class="form" [formGroup]="formulario">
-    <div class="container d-flex flex-row">
+    <div class="container d-flex flex-row px-0 ">
 
-
-
-      <div>
-        <label for="nombre">Nombre:</label>
-        <input type="text" name="nombre" formControlName="nombre">
+      <div class="form-floating mb-3 px-0">
+        <input formControlName="nombre" type="text" class="form-control" id="floatingInput" placeholder="name@example.com">
+        <label for="floatingInput">Nombre</label>
       </div>
 
-      <div>
-        <label for="telefono">Telefono:</label>
-        <input type="tel" name="telefono" formControlName="telefono">
+      <div class="form-floating mb-3 px-2">
+        <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com" formControlName="telefono">
+        <label for="floatingInput">Telefono</label>
+      </div>
 
+      <div class="form-floating mb-3">
+        <input formControlName="correo" type="text" class="form-control" id="floatingInput" placeholder="name@example.com">
+        <label for="floatingInput">correo</label>
       </div>
-      <div>
-        <label for="correo">Correo:</label>
-        <input type="email" name="correo" placeholder="example@.correo.com" formControlName="correo">
-      </div>
+
     </div>
 
     <div>
@@ -31,7 +30,7 @@
 
   </form>
 </div>
-
+<hr>
 
 <table class="table table-hover">
   <thead>
@@ -69,10 +68,7 @@
   </tbody>
 </table>
 
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modificarPaciente">
-  Launch demo modal
-</button>
+
 
 <!-- Modal -->
 <div class="modal fade" id="modificarPaciente" tabindex="-1" aria-labelledby="modificarPacienteLabel"
@@ -88,7 +84,7 @@
       <div class="modal-body">
         <form [formGroup]="formulario">
 
-          
+
 
           <!--Imput Nombre-->
           <div class="mb-3">
