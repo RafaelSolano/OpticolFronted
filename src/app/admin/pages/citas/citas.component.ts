@@ -109,7 +109,7 @@ export class CitasComponent implements OnInit {
   guardar( ):void{
     this.crearCita();
   }
-  //Crear paciente
+  //Crear cita
   private crearCita(){
     const data = this.formulario.value ;
     this.citaServiceService.save(data)

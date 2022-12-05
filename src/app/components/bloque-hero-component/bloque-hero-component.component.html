@@ -4,11 +4,94 @@
     <h1>!Cuida tu visión!</h1>
     <p>En nuestras ópticas físicas encontrarás asesoría personalizada con nuestros optómetras.</p>
     <div class="contBtn">
-      <button class="boton">AGENDA TU CITA</button>
+      <button class="boton"
+        tooltipClass="my-custom-class"
+  data-bs-toggle="modal"
+  data-bs-target="#crearCita">AGENDA TU CITA</button>
     </div>
   </div>
 
   <div class="imagen">
     <img src="./assets/img/optometra.png" alt="optometra">
+  </div>
+</div>
+
+
+
+<!-- Modal Crear cita-->
+<div class="modal fade" id="crearCita" tabindex="-1" aria-labelledby="crearCitaLabel"
+  aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="crearCitaLabel"> Crear Cita</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+
+      <div class="modal-body">
+        <form [formGroup]="formulario">
+
+          <!--Imput Fecha-->
+          <div class="mb-3">
+            <label for="input-nombre" class="form-label">Fecha</label>
+            <input type="date" class="form-control" id="input-fecha" name="fecha" formControlName="fecha">
+          </div>
+
+          <!--Imput hora-->
+          <div class="mb-3">
+            <label for="input-hora" class="form-label">Hora</label>
+            <input type="time" class="form-control" id="input-hora" name="hora" formControlName="hora">
+          </div>
+
+          <!--Imput Nombre-->
+          <div class="mb-3">
+            <label for="input-nombre" class="form-label">Nombre</label>
+            <input type="txt" class="form-control" id="input-nombre" name="nombre" formControlName="nombre">
+          </div>
+
+          <!--Imput Telefono-->
+          <div class="mb-3">
+            <label for="input-telefono" class="form-label">Telefono</label>
+            <input class="form-control" type="tel" id="input-telefono" name="telefono" formControlName="telefono">
+          </div>
+          <!--Select-->
+          <div class="mb-3">
+            <label for="tipoCita">Tipo de cita</label>
+            <select id="tipoCita" class="form-select form-select-sm" aria-label="Small select" formControlName="tipoCita" >
+
+              <option value="lentesContacto">Lentes Contacto</option>
+              <option value="consulta">Consulta Optometria</option>
+              <option value="seguimiento">Cita de Seguimiento</option>
+            </select>
+          </div>
+          <!--Estado Cita-->
+
+          <div class="mb-3">
+            <label for="tipoCita">Esatado Cita</label>
+            <select id="tipoCita" class="form-select form-select-sm" aria-label="Small select" formControlName="estadoCita" >
+
+              <option value="Confirmada">Lentes Contacto</option>
+              <option value="Cancelada">Consulta Optometria</option>
+              <option value="Pendiente">Cita de Seguimiento</option>
+            </select>
+          </div>
+
+
+
+        </form>
+      </div>
+
+
+      <div class="modal-footer">
+        <button
+            type="submit"
+            class="btn btn-outline-success"
+            (click)="save()"
+          >Guardar Cita</button>
+        <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Cancelar</button>
+
+      </div>
+    </div>
   </div>
 </div>

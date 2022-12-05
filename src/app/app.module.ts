@@ -11,9 +11,11 @@ import { InicioComponent } from './pages/inicio/inicio.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { HttpClientModule} from '@angular/common/http';
-import { FormsModule} from '@angular/forms';
+import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { EncuentranosComponentComponent } from './components/encuentranos-component/encuentranos-component.component';
 import { ReviewsComponentComponent } from './components/reviews-component/reviews-component.component';
+import { AdminModule } from './admin/admin.module';
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 
 
 
@@ -26,14 +28,19 @@ import { ReviewsComponentComponent } from './components/reviews-component/review
     ServicesComponentComponent,
     InicioComponent,
     EncuentranosComponentComponent,
-    ReviewsComponentComponent
+    ReviewsComponentComponent,
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    AdminModule,
+    ReactiveFormsModule,
+    SweetAlert2Module.forRoot()
+
 
   ],
   providers: [],
