@@ -56,8 +56,13 @@
           (click)="eliminar(paciente.id)">
           <i class="fa-solid fa-trash"></i>
         </button>
-        <button class=" btn btn-outline-success " ngbTooltip="Modificar" tooltipClass="my-custom-class"
-          data-bs-toggle="modal" data-bs-target="#modificarPaciente" (click)="modificarPaciente(paciente.id)">
+        <button
+          class=" btn btn-outline-success "
+          ngbTooltip="Modificar"
+          tooltipClass="my-custom-class"
+          data-bs-toggle="modal"
+          data-bs-target="#modificarPaciente"
+          (click)="modificarPaciente(paciente.id)">
 
           <i class="fa-regular fa-pen-to-square"></i>
         </button>
@@ -101,7 +106,7 @@
           <!--Imput Correo-->
           <div class="mb-3">
             <label for="input-correo" class="form-label">Correo</label>
-            <input type="txt" class="form-control" id="input-correo" name="correo" placeholder="example@.correo.com"
+            <input type="email" class="form-control" id="input-correo" name="correo" placeholder="example@.correo.com"
               formControlName="correo">
           </div>
 

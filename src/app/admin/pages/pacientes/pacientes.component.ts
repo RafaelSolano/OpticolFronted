@@ -73,17 +73,12 @@ export class PacientesComponent implements OnInit {
     })
   }
 
-//crear paciente
-  guardar( ):void{
-    this.crearPaciente();
-  }
+
   //Modificar Paciente
   update():void{
     const data = this.formulario.value ;
     console.log(data);
-    //this.modificarPaciente(data.id);
     this.pacienteService.modificar(data)
-
     .subscribe(data=>{
       Swal.fire({
         position: 'top-end',
@@ -94,6 +89,7 @@ export class PacientesComponent implements OnInit {
       });
       this.getPacientes();
       this.formulario.reset();
+      
     })
   }
   modificarPaciente(id:any){
@@ -108,7 +104,10 @@ export class PacientesComponent implements OnInit {
     });
 }
 
-
+  //crear paciente
+  guardar( ):void{
+    this.crearPaciente();
+  }
   //Crear paciente
   private crearPaciente(){
     const data = this.formulario.value ;
@@ -118,7 +117,7 @@ export class PacientesComponent implements OnInit {
         Swal.fire({
           position: 'top-end',
           icon: 'success',
-          title: 'Se Agrago con exito',
+          title: 'Se Agrego con exito',
           showConfirmButton: false,
           timer: 1300
         });
